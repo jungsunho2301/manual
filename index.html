@@ -49,13 +49,12 @@
       display: none;
     }
 
-    h2 {
-      margin-top: 0;
+    .disease-info {
+      margin-top: 20px;
     }
 
-    img {
-      max-width: 100%;
-      margin-top: 10px;
+    h2 {
+      margin-top: 0;
     }
 
     /* 모바일 대응 */
@@ -99,86 +98,91 @@
     <div id="page1" class="page">
       <h2>Home</h2>
       <p>본 페이지는 선박 검역 절차에 대한 안내 메뉴얼입니다.</p>
-      <p>왼쪽 탭을 선택하여 각 절차를 확인하세요.</p>
     </div>
 
     <div id="page2" class="page">
       <h2>승선검역</h2>
       <p>선박에 승선하여 검역관이 직접 검사를 수행합니다.</p>
-      <p>선원 및 승객의 건강 상태를 확인합니다.</p>
     </div>
 
     <div id="page3" class="page">
       <h2>서류심사</h2>
       <p>제출된 검역 관련 서류를 검토합니다.</p>
-      <p>서류 누락 시 추가 제출이 요구될 수 있습니다.</p>
     </div>
 
     <div id="page4" class="page">
       <h2>보건위생조사</h2>
       <p>선박 내 위생 상태 및 방역 조치를 점검합니다.</p>
-      <p>식수, 식품 보관 상태 등을 포함합니다.</p>
     </div>
 
+    <!-- 감염병 정보 -->
     <div id="page5" class="page">
-  <h2>감염병 정보</h2>
+      <h2>감염병 정보</h2>
 
-  <h3>동물인플루엔자 인체감염증 (AI)</h3>
+      <label for="diseaseSelect"><strong>감염병 선택</strong></label><br><br>
+      <select id="diseaseSelect" onchange="showDisease()">
+        <option value="AI">동물인플루엔자 인체감염증</option>
+        <option value="PLAGUE">페스트</option>
+      </select>
 
-  <p><strong>정의</strong><br>
-    조류인플루엔자 바이러스의 인체 감염에 의한 급성 호흡기 감염병
-  </p>
+      <!-- AI -->
+      <div id="AI" class="disease-info">
+        <h3>동물인플루엔자 인체감염증 (AI)</h3>
+        <p><strong>정의</strong><br>조류인플루엔자 바이러스의 인체 감염</p>
+        <p><strong>전파경로</strong><br>감염된 조류와의 접촉</p>
+        <p><strong>잠복기</strong><br>2~7일</p>
+        <p><strong>증상</strong><br>발열, 기침, 근육통, 폐렴 등</p>
+        <p><strong>치료</strong><br>항바이러스제</p>
+      </div>
 
-  <p><strong>전파경로</strong><br>
-    조류인플루엔자 바이러스에 감염된 조류와의 직·간접적 접촉
-  </p>
+      <!-- 페스트 -->
+      <div id="PLAGUE" class="disease-info" style="display:none;">
+        <h3>페스트</h3>
 
-  <p><strong>잠복기</strong><br>
-    2~7일 (최대 10일)
-  </p>
+        <p><strong>정의</strong><br>
+          페스트균(Yersinia pestis)의 감염에 의한 급성 발열성 인수공통 질환
+        </p>
 
-  <p><strong>증상</strong><br>
-    결막염, 발열, 기침, 근육통, 안구감염, 폐렴 등<br>
-    간혹 구역, 구토, 설사, 신경학적 증상이 나타날 수 있음
-  </p>
+        <p><strong>전파경로</strong></p>
+        <ul>
+          <li>감염된 쥐벼룩에 물림</li>
+          <li>감염된 야생동물 또는 사체 취급</li>
+          <li>폐페스트 환자의 비말</li>
+          <li>환자의 화농성 분비물 접촉</li>
+        </ul>
 
-  <p><strong>치료</strong><br>
-    항바이러스제 투여
-  </p>
+        <p><strong>잠복기</strong><br>1~7일</p>
 
-  <p><strong>감염기간</strong><br>
-    증상 발생 1일 전부터 증상 기간 동안
-  </p>
+        <p><strong>증상</strong></p>
+        <ul>
+          <li><strong>림프절 페스트</strong> : 발열, 두통, 림프절 종창</li>
+          <li><strong>호흡기 페스트</strong> : 기침, 호흡곤란, 중증 폐렴</li>
+          <li><strong>패혈증 페스트</strong> : 다발성 장기부전, 쇼크</li>
+        </ul>
 
-  <p><strong>치사율</strong><br>
-    약 9~30%
-  </p>
+        <p><strong>치료</strong><br>
+          항생제 (스트렙토마이신, 젠타마이신, 독시사이클린 등)
+        </p>
 
-  <p><strong>예방접종</strong><br>
-    상용화된 예방백신 없음
-  </p>
+        <p><strong>치명률</strong><br>
+          치료 시 15% 이내 / 미치료 시 50~60%
+        </p>
 
-  <p><strong>예방 / 주의사항</strong></p>
-  <ul>
-    <li>가금류, 철새, 야생조류와의 접촉 자제</li>
-    <li>재래시장, 철새도래지, 가금류 농장 방문 자제</li>
-    <li>손 씻기 등 개인위생 철저</li>
-    <li>
-      조류인플루엔자 인체감염 위험지역 방문 후 입국 시 증상이 있을 경우,<br>
-      건강상태질문서에 증상을 체크하여 국립검역소 검역관에게 제출
-    </li>
-    <li>
-      귀국 후 10일 이내 발열, 기침, 인후통 등 호흡기 증상 발생 시<br>
-      관할 보건소 또는 ☎ 1339 문의
-    </li>
-  </ul>
-</div>
+        <p><strong>예방접종</strong><br>상용화된 백신 없음</p>
 
+        <p><strong>예방 / 주의사항</strong></p>
+        <ul>
+          <li>손 씻기 철저</li>
+          <li>의심 증상자 접촉 금지</li>
+          <li>쥐·쥐벼룩·야생동물 접촉 금지</li>
+          <li>귀국 후 7일 이내 발열 시 1339 또는 보건소 상담</li>
+        </ul>
+      </div>
+    </div>
 
     <div id="page6" class="page">
       <h2>F & Q</h2>
-      <p><strong>Q.</strong> 검역은 얼마나 걸리나요?</p>
-      <p><strong>A.</strong> 보통 30분~1시간 정도 소요됩니다.</p>
+      <p>검역은 보통 30분~1시간 소요됩니다.</p>
     </div>
 
   </div>
@@ -190,7 +194,12 @@
     document.getElementById('page' + num).style.display = 'block';
   }
 
-  // 처음 접속 시 Home 표시
+  function showDisease() {
+    document.querySelectorAll('.disease-info').forEach(d => d.style.display = 'none');
+    const selected = document.getElementById('diseaseSelect').value;
+    document.getElementById(selected).style.display = 'block';
+  }
+
   showPage(1);
 </script>
 
