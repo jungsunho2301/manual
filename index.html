@@ -16,6 +16,7 @@
       height: 100vh;
     }
 
+    /* 왼쪽 탭 */
     .tabs {
       width: 120px;
       background: #f2f2f2;
@@ -37,6 +38,7 @@
       background: #ddd;
     }
 
+    /* 오른쪽 내용 */
     .content {
       flex: 1;
       padding: 20px;
@@ -47,10 +49,16 @@
       display: none;
     }
 
-    .disease-info {
-      margin-top: 20px;
+    h2 {
+      margin-top: 0;
     }
 
+    img {
+      max-width: 100%;
+      margin-top: 10px;
+    }
+
+    /* 모바일 대응 */
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
@@ -112,115 +120,137 @@
       <p>식수, 식품 보관 상태 등을 포함합니다.</p>
     </div>
 
-    <!-- 감염병 정보 -->
     <div id="page5" class="page">
       <h2>감염병 정보</h2>
 
+      <!-- 드롭다운 -->
       <select id="diseaseSelect" onchange="showDisease()">
         <option value="AI">동물인플루엔자 인체감염증</option>
         <option value="PLAGUE">페스트</option>
+        <option value="MERS">중동호흡기증후군(MERS)</option>
       </select>
 
-      <!-- 동물인플루엔자 인체감염증 (문서 그대로) -->
+      <!-- 동물인플루엔자 정보 -->
       <div id="AI" class="disease-info">
-        <h3>동물인플루엔자 인체감염증</h3>
-
         <p><strong>정의</strong><br>
-        조류인플루엔자 바이러스의 인체 감염에 의한 급성호흡기감염병</p>
-
+        조류인플루엔자 바이러스의 인체 감염에 의한 급성호흡기감염병
+        </p>
         <p><strong>전파경로</strong><br>
-        조류인플루엔자 바이러스에 감염된 조류와 직/간접적 접촉</p>
-
+        조류인플루엔자 바이러스에 감염된 조류와 직/간접적 접촉
+        </p>
         <p><strong>잠복기</strong><br>
-        2-7일 (최대 10일)</p>
-
+        2-7일 (최대 10일)
+        </p>
         <p><strong>증상</strong><br>
-        결막염, 발열, 기침, 근육통, 안구감염, 폐렴 등<br>
-        간혹 구역, 구토, 설사 신경학적 증상도 발현</p>
-
+        결막염, 발열, 기침, 근육통, 안구감염, 폐렴 등
+        <br>간혹 구역, 구토, 설사 신경학적 증상도 발현
+        </p>
         <p><strong>치료</strong><br>
-        항바이러스제 투여</p>
-
+        항바이러스제 투여
+        </p>
         <p><strong>감염기간</strong><br>
-        증상 발생 1일 전부터 증상 기간</p>
-
+        증상 발생 1일 전부터 증상 기간
+        </p>
         <p><strong>치사율</strong><br>
-        9-30%</p>
-
+        9-30%
+        </p>
         <p><strong>예방접종</strong><br>
-        상용화된 예방백신 없음</p>
-
+        상용화된 예방백신 없음
+        </p>
         <p><strong>예방/주의사항</strong></p>
         <ul>
           <li>가금류, 철새, 야생조류와의 접촉 자제</li>
           <li>재래시장, 철새도래지, 가금류농장 방문 자제</li>
           <li>손씻기 등 개인위생 철저</li>
-          <li>
-            조류인플루엔자 인체감염 위험지역 방문 후 입국 시 증상이 있을 경우,
-            건강상태질문서에 증상을 체크하여 국립검역소 검역관에게 제출
-          </li>
-          <li>
-            귀국 후 10일 이내 발열, 기침, 인후통 등 호흡기 증상 발생 시
-            관할 보건소 또는 1339 문의
-          </li>
+          <li>조류인플루엔자 인체감염 위험지역 방문 후 입국 시 증상이 있을 경우, 건강상태질문서에 증상을 체크하여 국립검역소 검역관에게 제출</li>
+          <li>귀국 후 10일 이내 발열, 기침, 인후통 등 호흡기 증상 발생 시 관할 보건소 또는 1339 문의</li>
         </ul>
       </div>
 
-      <!-- 페스트 (문서 그대로) -->
-      <div id="PLAGUE" class="disease-info" style="display:none;">
-        <h3>페스트</h3>
-
+      <!-- 페스트 정보 -->
+      <div id="PLAGUE" class="disease-info">
         <p><strong>정의</strong><br>
-        페스트균(Yersinia pestis)의 감염<br>
-        급성 발열성 인수공통 질환</p>
-
-        <p><strong>전파경로</strong></p>
-        <ul>
-          <li>감염된 쥐벼룩에 물려 감염</li>
-          <li>감염됨 야생동물이나 이들의 사체 취급</li>
-          <li>폐페스트 환자의 비말</li>
-          <li>페스트 환자의 화농성 분비물에 직접 접촉</li>
-        </ul>
-
-        <p><strong>잠복기</strong><br>1-7일</p>
-
-        <p><strong>증상</strong></p>
-        <p><strong>(림프절 페스트)</strong><br>
-        가장 흔한 임상 증상(80~95%), 증상은 갑작스러운 발열, 두통, 오한,
-        전신 쇠약감과 림프절 종창, 압통이 특징</p>
-
-        <p><strong>(호흡기 페스트)</strong><br>
-        호흡기 감염이나 림프절 또는 패혈증 페스트의 합병증으로 발생<br>
-        기침, 호흡 곤란, 흉통 및 수양성 혈담을 동반한 중증 폐렴으로 진행 가능<br>
-        증상 발현 25시간 이내 적절한 항생제 치료를 시작하면 치명률을 줄일 수 있음<br>
-        호흡기 감염이나 림프절 또는 패혈증 페스트의 합병증으로 발생</p>
-
-        <p><strong>(패혈증 페스트)</strong><br>
-        림프절 페스트와 호흡기 페스트가 적절히 치료되지 않을 때 나타날 수 있음<br>
-        다발성 장기부전, 출혈, 피부 괴사, 쇼크 등으로 사망가능</p>
-
+        페스트균(Yersinia pestis)의 감염
+        급성 발열성 인수공통 질환
+        </p>
+        <p><strong>전파경로</strong><br>
+        감염된 쥐벼룩에 물려 감염
+        감염됨 야생동물이나 이들의 사체 취급
+        폐페스트 환자의 비말
+        페스트 환자의 화농성 분비물에 직접 접촉
+        </p>
+        <p><strong>잠복기</strong><br>
+        1-7일
+        </p>
+        <p><strong>증상</strong><br>
+        (림프절 페스트)<br>
+        가장 흔한 임상 증상(80~95%), 증상은 갑작스러운 발열, 두통, 오한, 전신 쇠약감과 림프절 종창, 압통이 특징
+        <br>(호흡기 페스트)<br>
+        호흡기 감염이나 림프절 또는 패혈증 페스트의 합병증으로 발생
+        기침, 호흡 곤란, 흉통 및 수양성 혈담을 동반한 중증 폐렴으로 진행 가능
+        증상 발현 25시간 이내 적절한 항생제 치료를 시작하면 치명률을 줄일 수 있음
+        <br>(패혈증 페스트)<br>
+        림프절 페스트와 호흡기 페스트가 적절히 치료되지 않을 때 나타날 수 있음
+        다발성 장기부전, 출혈, 피부 괴사, 쇼크 등으로 사망가능
+        </p>
         <p><strong>치료</strong><br>
-        항생제 사용(스트렙토마이신, 젠타마이신, 독시사이클린, 퀴놀론)</p>
-
+        항생제 사용(스트렙토마이신, 젠타마이신, 독시사이클린, 퀴놀론)
+        </p>
         <p><strong>치명률</strong><br>
-        (치료시) 15% 이내<br>
-        (미치료시) 50-60%</p>
-
+        (치료시) 15% 이내
+        (미치료시) 50-60%
+        </p>
         <p><strong>예방접종</strong><br>
-        상용화된 예방백신 없음</p>
-
+        상용화된 예방백신 없음
+        </p>
         <p><strong>예방/주의사항</strong></p>
         <ul>
           <li>철저한 손씻기, 오염된 손으로 눈,코,입 등 점막 부위 접촉 삼가</li>
           <li>발열, 두통, 구토, 기침 등 페스트 의심 증상을 가진 사람과 접촉 금지</li>
           <li>페스트 발생 및 유행지역의 사망자 사체 접촉 금지</li>
           <li>쥐나 쥐벼룩, 야생동물 (사체 포함) 접촉하지 않기</li>
-          <li>
-            귀국 후 7일 이내에 발열 등 감염 의심 증상 발생시
-            마스크 착용 후 1339 또는 보건소와 전화 상담
-          </li>
+          <li>귀국 후 7일 이내에 발열 등 감염 의심 증상 발생시 마스크 착용 후 1339 또는 보건소와 전화 상담</li>
         </ul>
       </div>
+
+      <!-- MERS 정보 -->
+      <div id="MERS" class="disease-info">
+        <p><strong>정의</strong><br>
+        중동호흡기증후군 코로나바이러스(MERS-Coronavirus)의 인체감염에 의한 급성호흡기감염병
+        </p>
+        <p><strong>전파경로</strong><br>
+        자연계에서 사람으로의 감염경로는 명확하게 밝혀지지 않음(사우디아라비아 내 단봉낙타 접촉에 의한 감염 전파가 보고됨)
+        사람 간 감염은 밀접접촉에 의한 전파(대부분 병원 내 및 가족간 감염)
+        </p>
+        <p><strong>잠복기</strong><br>
+        2-14일 (평균 5일)
+        </p>
+        <p><strong>증상</strong><br>
+        발열, 기침, 호흡곤란, 그 외 두통, 오한, 인후통, 콧물, 근육통, 식욕부진, 오심 구토, 복통, 설사 등
+        </p>
+        <p><strong>치료</strong><br>
+        대증치료
+        </p>
+        <p><strong>감염기간</strong><br>
+        증상 발생시부터
+        </p>
+        <p><strong>치사율</strong><br>
+        20-46%
+        </p>
+        <p><strong>예방접종</strong><br>
+        상용화된 예방백신 없음
+        </p>
+        <p><strong>예방/주의사항</strong></p>
+        <ul>
+          <li>여행 중 농장방문자제 및 동물(특히 낙타) 접촉하지 않기</li>
+          <li>익히지 않은 낙타고기, 생낙타유 섭취하지 않기</li>
+          <li>발열/호흡기 증상자와 접촉 피하기</li>
+          <li>의료기관 방문시 호흡기 증상자 주의</li>
+          <li>메르스 위험지역 방문 후 입국 시 증상이 있을 경우, 건강상태질문서에 증상을 체크하여 국립검역소 검역관에게 제출</li>
+          <li>귀국 후 14일 이내에 발열, 호흡기증상 등 감염 의심 증상 발생시 의료기관 방문 전 1339 또는 보건소와 전화 상담</li>
+        </ul>
+      </div>
+
     </div>
 
     <div id="page6" class="page">
@@ -239,12 +269,14 @@
   }
 
   function showDisease() {
-    document.querySelectorAll('.disease-info').forEach(d => d.style.display = 'none');
+    document.querySelectorAll('.disease-info')
+      .forEach(d => d.style.display = 'none');
     document.getElementById(
       document.getElementById('diseaseSelect').value
     ).style.display = 'block';
   }
 
+  // 처음 접속 시 Home 표시
   showPage(1);
 </script>
 
